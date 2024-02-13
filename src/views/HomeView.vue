@@ -11,8 +11,8 @@
     <div class="chevron">
       <img src="/chevron-down-solid.svg" alt="scroll down" width="40">
     </div>
-    <div class="bloc">
-      <article class="middle">
+<!--    <div class="bloc">-->
+      <article>
         <h2>
           Concept
         </h2>
@@ -35,11 +35,11 @@
           distinctes.
         </p>
       </article>
-      <figure>
-        <img src="/configurateur.png" alt="aperçu du prototype">
-        <figcaption>aperçu du prototype</figcaption>
-      </figure>
-    </div>
+<!--      <figure>-->
+<!--        <img src="/configurateur.png" alt="aperçu du prototype">-->
+<!--        <figcaption>aperçu du prototype</figcaption>-->
+<!--      </figure>-->
+<!--    </div>-->
 
     <article>
       <h2>
@@ -62,7 +62,7 @@
           </p>
         </div>
         <figure>
-          <img src="/configurateur.png" alt="">
+          <img src="/configurateur1.png" alt="">
           <figcaption>
 
           </figcaption>
@@ -94,11 +94,58 @@
         </div>
       </div>
       <h3>Personnalisation de produits</h3>
-      <h4>Pour un client</h4>
-      <p>
+      <div class="bloc">
+        <div class="middle">
+          <h4>Pour le client</h4>
+          <p>
+            Il arrive que plusieurs déclinaisons possibles d’un même produit soient proposées au client, qu’il s’agisse
+            de
+            couleurs ou même de matériaux différents. En plus d’une simple visualisation, on peut facilement imaginer
+            des
+            cas ou le client souhaite être impliqué dans les choix et les combinaison des différents aspects modifiables
+            du
+            produit qu’il souhaite acheter. Ainsi, qu’il s’agisse d’aspects modifiables prédéfinis ou d’objets fabriqués
+            sur
+            mesure, la 3D permet au client de visualiser directement ses choix et de tester des combinaisons dans le
+            périmètre de limites seulement définies par le fabricant.
+          </p>
+        </div>
+        <figure>
+          <img src="/configurateur3.png" alt="">
+          <figcaption>
 
+          </figcaption>
+        </figure>
+      </div>
+      <div class="bloc">
+        <figure>
+          <img src="/configurateur2.png" alt="">
+          <figcaption>
+
+          </figcaption>
+        </figure>
+        <div class="middle">
+          <h4>Pour l'entreprise</h4>
+          <p>
+            La configuration interactive en 3D s’intègre aussi parfaitement au processus de conception, durant lequel on
+            a
+            souvent besoin de tester et de simuler différents éléments de création avant de passer à la production
+            matérielle. On peut alors se projeter avant d’engager des coûts réels.
+          </p>
+        </div>
+      </div>
+    </article>
+    <article>
+      <h2>Où en est le projet ?</h2>
+      <p>
+        Le projet ayant été lancé mi-février 2024, nous avons pour l'instant commencé à développer un premier prototype
+        qui n'en est qu'à ses balbutiements. Nous avons malgré tout pris le temps de mettre à plat les besoins et
+        ambitions relatifs à l'outil afin de pouvoir suivre un processus de développement organisé qui va à l'essentiel.
       </p>
-      <h4>Pour l'entreprise</h4>
+    </article>
+    <article>
+      <h2>La Team</h2>
+
     </article>
   </main>
 </template>
