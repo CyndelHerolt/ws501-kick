@@ -71,7 +71,7 @@
 
       <div class="bloc">
         <figure>
-          <img src="/configurateur.png" alt="">
+          <img src="/configurateur4.png" alt="">
           <figcaption>
 
           </figcaption>
