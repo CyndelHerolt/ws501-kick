@@ -3,17 +3,18 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header>
-    <nav>
-      <RouterLink to="/">
-        Accueil
-      </RouterLink>
-    </nav>
-  </header>
+<!--  <header>-->
+<!--    <nav>-->
+<!--      <RouterLink to="/">-->
+<!--        Accueil-->
+<!--      </RouterLink>-->
+<!--    </nav>-->
+<!--  </header>-->
   <RouterView/>
 
   <footer>
     <small>©️ Cyndel Herolt - 2024</small>
+    <small>Shams Benhamou - Sam Cherpin - Cyndel Herolt</small>
   </footer>
 </template>
 
@@ -25,5 +26,7 @@ footer {
   background-color: var(--color-background);
   width: 100%;
   padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
 }
 </style>

@@ -2,94 +2,247 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 #app {
-  /*max-width: 1280px;*/
-  margin: 0 auto;
-  /*padding: 2rem;*/
-  font-weight: normal;
-  /*display: flex;*/
-  /*flex-direction: column;*/
+    /*max-width: 1280px;*/
+    margin: 0 auto;
+    /*padding: 2rem;*/
+    font-weight: normal;
+    /*display: flex;*/
+    /*flex-direction: column;*/
 }
 
 * {
-  font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 @media (min-width: 1024px) {
-  main {
-    padding: 0 75px;
-  }
+    main {
+        /*padding: 0 75px;*/
+    }
 
-  header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--vt-c-text-dark-1);
-    padding: 15px 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 999;
-  }
-  nav {
-    display: flex;
-    justify-content: center;
-  }
+    nav {
+        margin: 50px 0 100px 0;
+    }
 
-  nav a {
-    margin: 0 15px;
-    font-weight: 500;
-    color: var(--color-text);
-  }
+    section {
+        margin-bottom: 50px;
+        padding: 0 100px;
+    }
 
-  section {
-    margin-bottom: 50px;
-  }
+    .logo {
+        width: 40px;
+        margin-bottom: 10px;
+    }
 
-  .logo {
-    width: 40px;
-    margin-bottom: 10px;
-  }
+    h1 {
+        font-size: 4vw;
+        font-weight: 400;
+    }
 
-  h1 {
-    font-size: 4vw;
-    font-weight: 400;
-  }
-  h2 {
-    font-size: 2.5vw;
-    font-weight: 400;
-  }
-  h3 {
-    font-size: 2vw;
-    font-weight: 300;
-  }
-  h4 {
-    font-size: 1.5vw;
-    font-weight: 300;
-  }
+    h2 {
+        font-size: 2.5vw;
+        font-weight: 400;
+    }
 
-  p, em {
-    margin-bottom: 15px;
-  }
+    h3 {
+        font-size: 2vw;
+        font-weight: 300;
+    }
 
-  article {
-    margin-bottom: 50px;
-  }
+    h4 {
+        font-size: 1.5vw;
+        font-weight: 300;
+    }
 
-  .home_head {
-    /*margin: 75px 0;*/
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-  }
+    p, em {
+        margin-bottom: 15px;
+    }
 
-  .chevron {
-    position: relative;
-    bottom: 10vh;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-  }
+    article {
+        margin-bottom: 50px;
+    }
+
+    .home_head {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 80px;
+        background-color: #f2f2f2;
+        margin: 0;
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .panel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            width: 100%;
+
+            figure {
+                /*width: 40%;*/
+            }
+
+            .card {
+                display: flex;
+                flex-direction: column;
+                margin: 0 15px;
+                padding: 15px;
+                width: 30%;
+                height: 100%;
+
+                h3 {
+                    color: #36afc4;
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                }
+
+                .progress {
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    margin-top: 15px;
+                    width: 100%;
+                    height: 15px;
+                    background-color: #ececec;
+
+                    .progress-bar {
+                        width: 50%;
+                        height: 100%;
+                        background-color: #36afc4;
+
+                        .text {
+                            text-align: center;
+                            font-size: 10px;
+                            color: #fff;
+                            font-weight: bold;
+                        }
+                    }
+                }
+
+                .text {
+                    display: flex;
+                    flex-direction: column;
+
+                    p {
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                        margin-bottom: 0;
+                        color: #36afc4;
+                    }
+
+                    small {
+                        font-size: 1rem;
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
+    }
+
+    .btn-primary {
+        background-color: #36afc4;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.25rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+        margin: 20px 0;
+
+        &:hover {
+            background-color: #2a8e9d;
+        }
+    }
+
+    .onglets {
+        display: flex;
+        justify-content: flex-start;
+        gap: 2.5rem;
+        align-items: center;
+        padding: 25px 100px;
+        border-top: solid 1px #adadad;
+        border-bottom: solid 1px #adadad;
+        margin: 0 0 50px 0;
+
+        a {
+            color: black;
+            font-size: 1.25rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: 0.3s;
+
+            &:hover {
+                color: #2a8e9d;
+            }
+
+            &.active-link {
+                color: #36afc4;
+            }
+        }
+
+    }
+
+    .text-muted {
+        color: #595959;
+        font-size: .8rem;
+        font-weight: 300;
+    }
+
+    .panel {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        margin-top: 50px;
+        width: 100%;
+
+        figure {
+            /*width: 40%;*/
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            margin: 0 15px;
+            padding: 15px;
+            width: 30%;
+            /*height: 100%;*/
+        }
+    }
+
+    .banner-infos {
+        background-color: #36afc4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 100px;
+        gap: 3rem;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 1.25rem;
+            font-weight: 300;
+            width: 30%;
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
 }
