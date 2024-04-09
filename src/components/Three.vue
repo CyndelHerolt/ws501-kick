@@ -73,7 +73,7 @@ export default {
         const gui = new GUI({ width: 340 })
         const debugObject = {}
 
-        debugObject.clearColor = '#160920'
+        debugObject.clearColor = '#ffffff'
         gui.addColor(debugObject, 'clearColor').onChange(() => { renderer.setClearColor(debugObject.clearColor) })
         renderer.setClearColor(debugObject.clearColor)
 
@@ -125,20 +125,20 @@ export default {
             particles.geometry.setAttribute('aPositionTarget', particles.positions[3])
             particles.geometry.setAttribute('aSize', new THREE.BufferAttribute(sizesArray, 1))
 
-            particles.colorA = '#ff7300'
-            particles.colorB = '#0091ff'
+            particles.colorA = '#000000'
+            particles.colorB = '#000000'
 
             particles.material = new THREE.ShaderMaterial({
                 vertexShader: particlesVertexShader,
                 fragmentShader: particlesFragmentShader,
                 uniforms: {
-                    uSize: new THREE.Uniform(0.4),
+                    uSize: new THREE.Uniform(0.1),
                     uResolution: new THREE.Uniform(new THREE.Vector2(sizes.width * sizes.pixelRatio, sizes.height * sizes.pixelRatio)),
                     uProgress: new THREE.Uniform(0),
                     uColorA: new THREE.Uniform(new THREE.Color(particles.colorA)),
                     uColorB: new THREE.Uniform(new THREE.Color(particles.colorB))
                 },
-                blending: THREE.AdditiveBlending,
+                blending: THREE.NormalBlending,
                 depthWrite: false
             })
 
