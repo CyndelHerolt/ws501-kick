@@ -148,6 +148,7 @@ export default {
 
             particles.points = new THREE.Points(particles.geometry, particles.material)
             particles.points.frustumCulled = false
+            particles.points.rotation.y = -(window.scrollY - 450) * 0.001
             scene.add(particles.points)
 
             particles.morph = (index) => {
@@ -177,6 +178,21 @@ export default {
             gui.add(particles, 'morph2')
             gui.add(particles, 'morph3')
         })
+
+
+        const handleScroll = () => {
+            console.log(window.scrollY);
+            let scroll = window.scrollY - 450
+            particles.points.rotation.y = -scroll * 0.001
+
+            // Modifier également uProgress en fonction de la valeur de défilement
+            let progress = (window.scrollY - 450) / 1000; // Adapter la plage de valeurs si nécessaire
+            progress = Math.min(Math.max(progress, 0), 1); // Assurer que progress reste entre 0 et 1
+            particles.material.uniforms.uProgress.value = progress;
+        }
+
+        window.addEventListener('scroll', handleScroll)
+
 
         // Animation loop
         const tick = () => {
