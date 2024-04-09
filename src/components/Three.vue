@@ -18,9 +18,11 @@ export default {
     name: 'ThreeJsScene',
     mounted() {
         // Sizes
+        const webglContainer = document.querySelector('.webgl-container')
+
         const sizes = {
-            width: window.innerWidth,
-            height: window.innerHeight,
+            width: webglContainer.offsetWidth,
+            height: webglContainer.offsetHeight,
             pixelRatio: Math.min(window.devicePixelRatio, 2)
         }
 
@@ -80,7 +82,7 @@ export default {
         // Particles
         let particles = null
 
-        gltfLoader.load('./glasses.glb', (gltf) => {
+        gltfLoader.load('./models2.glb', (gltf) => {
             particles = {}
             particles.index = 0
             // log les géométries pour voir les attributs
@@ -190,13 +192,13 @@ export default {
 
 <style scoped>
 .webgl-container {
-    position: absolute;
-    top: 0;
+    position: sticky;
+    top: 40%;
     left: 0;
     width: 100%;
-    height: 100%;
-    outline: red solid 1px;
-    /* pointer-events: none; */
+    height: 40vh;
+    /* outline: red solid 1px; */
+    pointer-events: none;
 }
 
 .webgl-canvas {
