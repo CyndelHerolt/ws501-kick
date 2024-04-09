@@ -11,12 +11,16 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
 import GUI from 'lil-gui'
 import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 import particlesVertexShader from '../assets/shaders/particles/vertex.glsl'
 import particlesFragmentShader from '../assets/shaders/particles/fragment.glsl'
 
 export default {
     name: 'ThreeJsScene',
     mounted() {
+
+        gsap.registerPlugin(ScrollTrigger)
         // Sizes
         const webglContainer = document.querySelector('.webgl-container')
 
@@ -25,6 +29,17 @@ export default {
             height: webglContainer.offsetHeight,
             pixelRatio: Math.min(window.devicePixelRatio, 2)
         }
+
+        // Création de l'animation que vous souhaitez déclencher
+        const animation = gsap.to('.webgl-container', {
+            xPercent: 50,
+            scrollTrigger: {
+                trigger: '.webgl-container',
+                start: 'top center', // Démarre l'animation lorsque le haut de la fenêtre d'affichage atteint le centre de .webgl-container
+                end: 'bottom center', // Arrête l'animation lorsque le bas de la fenêtre d'affichage atteint le centre de .webgl-container
+                scrub: 1, // L'animation se synchronise avec le défilement
+            }
+        });
 
         // window.addEventListener('resize', () => {
         //     // Update sizes
@@ -73,6 +88,7 @@ export default {
 
         // Debug
         const gui = new GUI({ width: 340 })
+        gui.hide()
         const debugObject = {}
 
         debugObject.clearColor = '#ffffff'
@@ -135,7 +151,7 @@ export default {
                 vertexShader: particlesVertexShader,
                 fragmentShader: particlesFragmentShader,
                 uniforms: {
-                    uSize: new THREE.Uniform(0.05),
+                    uSize: new THREE.Uniform(0.1),
                     uResolution: new THREE.Uniform(new THREE.Vector2(sizes.width * sizes.pixelRatio, sizes.height * sizes.pixelRatio)),
                     uProgress: new THREE.Uniform(0),
                     uColorA: new THREE.Uniform(new THREE.Color(particles.colorA)),
@@ -183,10 +199,10 @@ export default {
         const handleScroll = () => {
             console.log(window.scrollY);
             let scroll = window.scrollY - 450
-            particles.points.rotation.y = -scroll * 0.001
+            particles.points.rotation.y = -scroll * 0.002
 
             // Modifier également uProgress en fonction de la valeur de défilement
-            let progress = (window.scrollY - 450) / 1000; // Adapter la plage de valeurs si nécessaire
+            let progress = (window.scrollY - 700) / 1000; // Adapter la plage de valeurs si nécessaire
             progress = Math.min(Math.max(progress, 0), 1); // Assurer que progress reste entre 0 et 1
             particles.material.uniforms.uProgress.value = progress;
         }
@@ -210,11 +226,12 @@ export default {
 .webgl-container {
     position: sticky;
     top: 40%;
-    left: 0;
-    width: 100%;
+    /* right: 0%; */
+    width: 50vw;
     height: 40vh;
     /* outline: red solid 1px; */
     pointer-events: none;
+    transform: translateX(30%);
 }
 
 .webgl-canvas {

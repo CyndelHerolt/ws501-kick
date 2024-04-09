@@ -19,7 +19,7 @@ import Three from './Three.vue'
     </div>
 
     <div class="panel">
-      <div class="card" style="width: 50%">
+      <div class="card" style="width: 50%;margin-top: 100px;">
         <h3>Visualisateur vitrine</h3>
         <p>Notre plateforme offre une expérience immersive où vous pouvez importer facilement vos propres modèles 3D et
           enrichir chaque détail avec des informations spécifiques. Imaginez pouvoir explorer un modèle architectural
@@ -28,13 +28,13 @@ import Three from './Three.vue'
           quiconque, des amateurs aux professionnels, d'interagir avec des modèles 3D de manière informative et
           engageante.</p>
       </div>
-      <figure style="width: 40%; border: solid 1px #36afc4">
-        <!-- todo: itégrer le model 3D -->
-      </figure>
+
     </div>
 
+
+
     <div class="panel">
-      <div class="card" style="width: 50%">
+      <div class="card" style="width: 50%; margin-top: 100px; margin-bottom: 100px;">
         <h3>Configurateur</h3>
         <p>
           Notre configurateur 3D est un outil puissant qui permet à vos clients de personnaliser vos produits en temps
@@ -45,9 +45,7 @@ import Three from './Three.vue'
           dans la mesure où il permet de tester des prototypes virtuels avant de les produire.
         </p>
       </div>
-      <figure style="width: 40%; border: solid 1px #36afc4">
-        <!-- todo: itégrer le model 3D -->
-      </figure>
+
     </div>
   </section>
 </template>
