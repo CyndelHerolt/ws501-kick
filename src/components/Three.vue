@@ -80,10 +80,11 @@ export default {
         // Particles
         let particles = null
 
-        gltfLoader.load('./models.glb', (gltf) => {
+        gltfLoader.load('./glasses.glb', (gltf) => {
             particles = {}
             particles.index = 0
-
+            // log les géométries pour voir les attributs
+            gltf.scene.children.map(child => console.log(child))
             const positions = gltf.scene.children.map(child => child.geometry.attributes.position)
 
             particles.maxCount = 0
@@ -194,7 +195,7 @@ export default {
     width: 100%;
     height: 100%;
     outline: red solid 1px;
-    pointer-events: none;
+    /* pointer-events: none; */
 }
 
 .webgl-canvas {
