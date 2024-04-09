@@ -133,14 +133,15 @@ export default {
                 vertexShader: particlesVertexShader,
                 fragmentShader: particlesFragmentShader,
                 uniforms: {
-                    uSize: new THREE.Uniform(0.1),
+                    uSize: new THREE.Uniform(0.05),
                     uResolution: new THREE.Uniform(new THREE.Vector2(sizes.width * sizes.pixelRatio, sizes.height * sizes.pixelRatio)),
                     uProgress: new THREE.Uniform(0),
                     uColorA: new THREE.Uniform(new THREE.Color(particles.colorA)),
                     uColorB: new THREE.Uniform(new THREE.Color(particles.colorB))
                 },
                 blending: THREE.NormalBlending,
-                depthWrite: false
+                depthWrite: false,
+                alphaTest: 0.2,
             })
 
             particles.points = new THREE.Points(particles.geometry, particles.material)
