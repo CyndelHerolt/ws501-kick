@@ -28,6 +28,10 @@
         padding: 0 100px;
     }
 
+    .section-concept {
+        position: absolute;
+    }
+
     .logo {
         width: 40px;
         margin-bottom: 10px;
@@ -53,7 +57,8 @@
         font-weight: 300;
     }
 
-    p, em {
+    p,
+    em {
         margin-bottom: 15px;
     }
 
@@ -213,6 +218,7 @@
         }
 
         .card {
+            position: relative;
             display: flex;
             flex-direction: column;
             margin: 0 15px;
